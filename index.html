@@ -5,87 +5,151 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAMstack - Modern Web Development</title>
     <style>
-        :root {
-            --primary-color: #2d3748;
-            --accent-color: #4299e1;
-            --text-color: #1a202c;
-            --background-color: #f7fafc;
-        }
+:root {
+    --primary-color: #2d3748;
+    --accent-color: #4299e1;
+    --accent-hover-color: #2b6cb0;
+    --text-color: #1a202c;
+    --background-color: #f7fafc;
+    --card-background: #ffffff;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--background-color);
-        }
+body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background: linear-gradient(135deg, #e0e7ff, #f7fafc);
+    min-height: 100vh;
+}
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
+header {
+    text-align: center;
+    margin-bottom: 4rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--accent-color);
+}
 
-        h1 {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
+h1 {
+    font-size: 3rem;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
 
-        .content {
-            display: grid;
-            gap: 2rem;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        }
+.content {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 
-        .card {
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+.card {
+    background: var(--card-background);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px var(--shadow-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 1rem 2rem;
-            text-decoration: none;
-            border-radius: 4px;
-            margin-top: 2rem;
-            font-weight: bold;
-            transition: background-color 0.3s ease;
-        }
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(66, 153, 225, 0.4);
+}
 
-        .cta-button:hover, .cta-button:focus {
-            background-color: #2b6cb0;
-            text-decoration: underline;
-        }
+h2 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
 
-        .cta-button:focus {
-            outline: 3px solid #63b3ed;
-            outline-offset: 2px;
-        }
+ul {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 0;
+    margin-bottom: 1.2rem;
+}
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 2rem;
-            }
+li {
+    position: relative;
+    padding-left: 1.4em;
+    margin-bottom: 0.5rem;
+    line-height: 1.7;
+}
+li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.7em;
+    width: 0.5em;
+    height: 0.5em;
+    background: var(--accent-color);
+    border-radius: 50%;
+    transform: translateY(-50%);
+}
 
-            .container {
-                padding: 1rem;
-            }
-        }
+
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+a:hover, a:focus {
+    color: var(--accent-hover-color);
+    text-decoration: underline;
+    outline: none;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: var(--accent-color);
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 6px;
+    margin-top: 2rem;
+    font-weight: 700;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.6);
+}
+
+.cta-button:hover, .cta-button:focus {
+    background-color: var(--accent-hover-color);
+    text-decoration: underline;
+    box-shadow: 0 6px 18px rgba(43, 108, 176, 0.8);
+}
+
+.cta-button:focus {
+    outline: 3px solid #63b3ed;
+    outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    .container {
+        padding: 1rem;
+    }
+}
     </style>
 </head>
 <body>
@@ -117,6 +181,58 @@
                     <a href="https://www.erikvanzuijdam.nl" class="cta-button" aria-label="Learn more about JAMstack on Erik van Zuijdam's website">Contact me</a>
                 </div>
             </div>
+            <h1>JAMstack Ecosystem Overview</h1>
+
+  <h2>1. Frontend Frameworks & Static Site Generators</h2>
+  <ul>
+    <li><a href="https://nextjs.org/">Next.js</a> (React-based)</li>
+    <li><a href="https://www.gatsbyjs.com/">Gatsby</a> (React-based)</li>
+    <li><a href="https://nuxt.com/">Nuxt.js</a> (Vue-based)</li>
+    <li><a href="https://gridsome.org/">Gridsome</a> (Vue-based)</li>
+    <li><a href="https://jekyllrb.com/">Jekyll</a> (Ruby-based)</li>
+    <li><a href="https://gohugo.io/">Hugo</a> (Go-based)</li>
+    <li><a href="https://www.11ty.dev/">Eleventy (11ty)</a> (JavaScript-based)</li>
+    <li><a href="https://hexo.io/">Hexo</a> (Node.js-based)</li>
+    <li><a href="https://astro.build/">Astro</a> (Multi-framework, minimal JS)</li>
+    <li><a href="https://tezjs.io/">TezJS</a> (JavaScript-based)</li>
+  </ul>
+
+  <h2>2. Relevant Headless & Git-based CMSs</h2>
+  <ul>
+    <li><a href="https://www.contentful.com/">Contentful</a></li>
+    <li><a href="https://www.storyblok.com/">Storyblok</a></li>
+    <li><a href="https://www.sanity.io/">Sanity</a></li>
+    <li><a href="https://www.netlifycms.org/">Netlify CMS</a></li>
+    <li><a href="https://www.datocms.com/">DatoCMS</a></li>
+    <li><a href="https://forestry.io/">Forestry</a></li>
+    <li><a href="https://strapi.io/">Strapi</a></li>
+    <li><a href="https://prismic.io/">Prismic</a></li>
+    <li><a href="https://buttercms.com/">ButterCMS</a></li>
+    <li><a href="https://headlesscms.org/">HeadlessCMS.org</a> (Directory)</li>
+  </ul>
+
+  <h2>3. Build Engines & Static Hosting/CDN</h2>
+  <ul>
+    <li><a href="https://vercel.com/">Vercel</a> (Next.js hosting & build)</li>
+    <li><a href="https://www.netlify.com/">Netlify</a> (Build, deploy, CDN)</li>
+    <li><a href="https://firebase.google.com/products/hosting">Firebase Hosting</a></li>
+    <li><a href="https://surge.sh/">Surge</a></li>
+    <li><a href="https://pages.github.com/">GitHub Pages</a></li>
+    <li><a href="https://azure.microsoft.com/en-us/services/app-service/static/">Azure Static Web Apps</a></li>
+    <li><a href="https://aws.amazon.com/amplify/">AWS Amplify</a></li>
+  </ul>
+
+  <h2>4. Other Relevant URLs & Resources</h2>
+  <ul>
+    <li><a href="https://jamstack.org/">JAMstack.org</a> (Official site & resources)</li>
+    <li><a href="https://staticgen.com/">StaticGen</a> (Static site generator directory)</li>
+    <li><a href="https://headlesscms.org/">HeadlessCMS.org</a> (Headless CMS directory)</li>
+    <li><a href="https://dev.to/t/jamstack">JAMstack on Dev.to</a> (Community articles)</li>
+    <li><a href="https://css-tricks.com/tag/jamstack/">JAMstack on CSS-Tricks</a></li>
+    <li><a href="https://github.com/automata/awesome-jamstack">Awesome JAMstack (GitHub)</a> (Curated resources)</li>
+    <li><a href="https://pagepro.co/blog/top-5-jamstack-frameworks-to-choose-in-2021/">Top JAMstack Frameworks (Article)</a></li>
+    <li><a href="https://buttercms.com/blog/top-jamstack-cms-tools/">Top JAMstack CMS Tools (Article)</a></li>
+  </ul>
         </main>
     </div>
 </body>
