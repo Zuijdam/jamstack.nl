@@ -4,7 +4,45 @@
     <meta charset="UTF-8">
     <script defer src="https://cloud.umami.is/script.js" data-website-id="1ce855f2-96ec-4684-a95d-40f9a5eddbea"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JAMstack — Moderne webontwikkeling</title>
+        <title>JAMstack — Moderne webontwikkeling</title>
+        <meta name="description" content="Overzicht van JAMstack-architectuur, tools en bronnen — Frontend-frameworks, headless CMS'en, hosting en nuttige links voor moderne, snelle en veilige websites.">
+        <meta name="robots" content="index,follow">
+        <link rel="canonical" href="https://jamstack.nl/">
+        <meta property="og:title" content="JAMstack — Moderne webontwikkeling">
+        <meta property="og:description" content="Overzicht van JAMstack-architectuur, tools en bronnen — Frontend-frameworks, headless CMS'en en hostingopties.">
+        <meta property="og:type" content="website">
+        <meta property="og:url" content="https://jamstack.nl/">
+        <meta property="og:locale" content="nl_NL">
+        <meta name="twitter:card" content="summary">
+        <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@graph": [
+                {
+                    "@type": "WebSite",
+                    "@id": "https://jamstack.nl/#website",
+                    "url": "https://jamstack.nl/",
+                    "name": "JAMstack — Moderne webontwikkeling",
+                    "description": "Een overzicht van JAMstack-architectuur, tools en bronnen.",
+                    "publisher": {"@id": "https://jamstack.nl/#person"}
+                },
+                {
+                    "@type": "WebPage",
+                    "@id": "https://jamstack.nl/#webpage",
+                    "url": "https://jamstack.nl/",
+                    "name": "JAMstack — Moderne webontwikkeling",
+                    "inLanguage": "nl",
+                    "isPartOf": {"@id": "https://jamstack.nl/#website"}
+                },
+                {
+                    "@type": "Person",
+                    "@id": "https://jamstack.nl/#person",
+                    "name": "Erik van Zuijdam",
+                    "url": "https://www.erikvanzuijdam.nl/"
+                }
+            ]
+        }
+        </script>
     <style>
 :root {
     --primary-color: #2d3748;
@@ -15,6 +53,26 @@
     --card-background: #ffffff;
     --shadow-color: rgba(0, 0, 0, 0.1);
     --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.skip-link {
+    position: absolute;
+    left: -9999px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+.skip-link:focus {
+    position: static;
+    left: 0;
+    width: auto;
+    height: auto;
+    background: #4299e1;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    z-index: 9999;
 }
 
 * {
@@ -154,12 +212,13 @@ a:hover, a:focus {
     </style>
 </head>
 <body>
+    <a class="skip-link" href="#main-content">Overslaan naar inhoud</a>
     <div class="container">
         <header>
             <h1>JAMstack: De toekomst van webontwikkeling</h1>
         </header>
         
-        <main>
+        <main id="main-content">
             <div class="content">
                 <div class="card">
                     <h2>Wat is JAMstack?</h2>
@@ -182,7 +241,7 @@ a:hover, a:focus {
                     <a href="https://www.erikvanzuijdam.nl" class="cta-button" aria-label="Lees meer over JAMstack op de website van Erik van Zuijdam">Neem contact op</a>
                 </div>
             </div>
-            <h1>Overzicht van het JAMstack-ecosysteem</h1>
+            <h2 id="ecosysteem">Overzicht van het JAMstack-ecosysteem</h2>
 
     <h2>1. Frontend-frameworks en statische sitegenerators</h2>
   <ul>
